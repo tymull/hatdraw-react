@@ -1,13 +1,344 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+  height: 100%;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  box-sizing: border-box;
+  font-family: 'Quicksand', serif;
+  background-color: #eae7dc;
+  /*background-color: #FAF9F6;*/
+  color: #8e8d8a;
+  color: #5D6063;
+  color: #212529;
+
+}
+
+/* Menu */
+nav {
+  font-family: 'Quicksand', serif;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.navbar {
+  justify-content: center !important;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /*background-color: #333;*/
+}
+
+.active {
+  /*font-weight: bold;*/
+  color: #cd1624;
+}
+
+.active-page {
+  background-color: #769db2;
+  color: #ffb6b9;
+  font-weight: bold;
+  border-radius: 7px;
+}
+
+.page {
+  width: 100%;
+  padding: 0px 20px 0px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.section {
+  width: 100%;
+  /*height: 500px;*/
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px 0px 20px 0px;
+}
+
+.section img {
+  width: 100%;
+  padding: 15px 25px 15px 25px;
+  background-color: #e98074;
+  border-radius: 20%;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.section img:hover {
+  background-color: #e85a4f;
+}
+
+.section img:active {
+  top: 3px;
+  left: 6px;
+  box-shadow: none;
+}
+
+.homepage-header,
+.page-header {
+  font-family: 'Pacifico', serif;
+  display: flex;
+  font-size: 56px;
+  /*margin-top: 35px;*/
+  /*margin-bottom: -5px;*/
+  justify-content: center;
+  /*padding-right: 115px;*/
+  margin-top: 40px;
+}
+
+.logo-text {
+  font-family: 'Pacifico', cursive;
+  color: #04489d;
+  color: #b29a6e;
+  color: #b2645c;
+  color: #9d76b2;
+  color: black;
+  /*color: #bb010b;*/
+  color: #cd1624;
+  color: #e85a4f;
+  font-size: 25px;
+  /*text-shadow: 2px 2px 2px #cd1624;*/
+  padding-left: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+h3 {
+  font-family: 'Quicksand', serif;
+  display: flex;
+  font-size: 25px;
+  max-width: 1100px;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  margin-left: 200px;
+}
+
+h5 {
+  font-family: 'Quicksand', serif;
+  display: flex;
+  font-size: 25px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 1200px;
+}
+
+.flex-wrapper {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer {
+  /*becaise min heights are established with html and body, will stay at bottom
+  regardless of page size but will not be sticky or fixed*/
+  justify-self: flex-end;
+  align-self: flex-end;
+  width: 100%;
+}
+
+.footer-text {
+  font-size: 20px;
+  padding: 30px;
+  margin: 0;
+}
+
+.navbar-custom {
+  background-color: #23856d;
+  background-color: #8e8d8a;
+}
+
+.navbar-brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 5px;
+  margin-right: 10px;
+}
+
+.logo {
+  height: 40px;
+  filter: invert(100%) sepia(12%) saturate(7466%) hue-rotate(179deg) brightness(113%) contrast(89%);
+}
+
+.nav-item {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.hat-icon {
+  max-width: 300px;
+}
+
+.hat-caption {
+  font-family: 'Quicksand', serif;
+  display: flex;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  justify-content: center;
+  color: #212529;
+  text-decoration: none !important;
+}
+
+.bacon {
+  width: 100%;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a.footer-link {
+    color: #f8f9fa;
+}
+
+a.footer-link:hover {
+    text-decoration: underline;
+    color: #f8f9fa;
+}
+
+.hat-description {
+  text-align: center;
+}
+
+p {
+  font-family: 'Quicksand', serif;
+  font-size: 23px;
+  line-height: 1.6;
+}
+
+.p-description {
+  margin-top: 20px;
+}
+
+.label-instructions {
+  font-family: 'Quicksand', serif;
+  font-size: 23px;
+  font-weight: bold;
+  line-height: 1.6;
+  margin: 10px 0px 10px 0px;
+}
+
+.form-resize {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  color: #212529;
+  background-color: #d8c3a5;
+  border-color: #d8c3a5;
+  background-color: #e98074;
+  border-color: #e98074;
+  font-size: 23px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.btn-primary:hover {
+  color: #212529;
+  background-color: #e85a4f;
+  border-color: #e85a4f;
+}
+
+.btn-primary:active {
+  top: 3px !important;
+  left: 6px !important;
+  box-shadow: none !important;
+}
+
+.btn-primary:focus {
+  color: #212529;
+  background-color: #e85a4f;
+  border-color: #e85a4f;
+}
+
+/* Small Mobile Styles */
+@media only screen and (max-width: 374px) {
+  .logo {
+    height: 30px;
+  }
+
+  .logo-text {
+    font-size: 19.5px;
+  }
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+  .navbar-brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+  }
+
+  .hat-description {
+    max-width: 450px;
+  }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+  .navbar-brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+    margin-right: 30px;
+  }
+
+  .hat-description {
+    max-width: 450px;
+  }
+
+  .main-section {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    max-width: 1260px;
+  }
+
+  .section {
+    padding: 0px 20px 0px 20px;
+  }
+
+  .realign {
+    align-self: flex-start;
+  }
+
+  .constraints {
+    max-width: 1260px;
+  }
+
+  .form-resize {
+    max-width: 1260px;
+    margin-bottom: 150px;
+  }
+
+  /*If some pages have more content, could make a separate class to keep those
+  smaller*/
+  .page-header {
+    font-size: 100px;
+    margin: 100px 0px 80px 0px;
+  }
 }
