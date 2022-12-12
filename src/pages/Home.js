@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import hatdrawLogo from "../images/hatdraw-logo.svg";
 
 const Home = () => {
+    document.title = "Hat Draw Machine";
     return (
     <div class="flex-wrapper">
         <div class="page">

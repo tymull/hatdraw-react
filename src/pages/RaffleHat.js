@@ -1,4 +1,5 @@
 const RaffleHat = () => {
+    document.title = "Raffle Hat";
     return (
     <div class="flex-wrapper">
         <div class="page">

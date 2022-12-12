@@ -1,4 +1,5 @@
 const ExchangeHat = () => {
+    document.title = "Exchange Hat";
     return (
     <div class="flex-wrapper">
         <div class="page">

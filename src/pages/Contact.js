@@ -1,6 +1,7 @@
 import FactFinder from "../FactFinder.js";
 
 const Contact = () => {
+    document.title = "Contact";
     return (
     <div class="flex-wrapper">
         <div class="page">
