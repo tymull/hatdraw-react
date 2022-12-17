@@ -11,7 +11,7 @@ const ExchangeHat = () => {
               <form>
                 <div class="form-group">
                   <label class="label-instructions" for="exchangeHatTextarea">Enter
-                    each item (name, number, etc.) on its own line in the field below.
+                    each entry (name, number, etc.) on its own line in the field below.
                     You can also upload a previous list.</label>
                   <textarea class="form-control form-control-lg" id="exchangeHatTextarea" rows="7" placeholder="Name 1"></textarea>
                   {/*Could have done something like "Name 1&#10;Name 2&#10;etc..." to show lines, but it doesn't work on safari or iphones. Would need

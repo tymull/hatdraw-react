@@ -98,6 +98,11 @@ nav ul {
   box-shadow: none;
 }
 
+.list {
+  list-style: none;
+  margin: 20px 0px 100px 0px;
+}
+
 .homepage-header,
 .page-header {
   font-family: 'Pacifico', serif;
