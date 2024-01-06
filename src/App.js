@@ -8,8 +8,8 @@ import Contact from "./pages/Contact";
 
 export default function App() {
   return (
-    // used to have basename="/hatdraw-react/" when there were other versions but for now set it back to "/"
-     <BrowserRouter basename="/">
+    // make sure "/hatdraw-react/" is in the url if using localhost
+     <BrowserRouter basename="/hatdraw-react/">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
