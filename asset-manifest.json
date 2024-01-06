@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "./static/css/main.571822ef.css",
+    "main.js": "./static/js/main.a9aba494.js",
+    "static/js/787.81ffc542.chunk.js": "./static/js/787.81ffc542.chunk.js",
+    "static/media/hatdraw-logo.svg": "./static/media/hatdraw-logo.a08e3846a533b2109dd84e8a78838a74.svg",
+    "index.html": "./index.html",
+    "main.571822ef.css.map": "./static/css/main.571822ef.css.map",
+    "main.a9aba494.js.map": "./static/js/main.a9aba494.js.map",
+    "787.81ffc542.chunk.js.map": "./static/js/787.81ffc542.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.571822ef.css",
+    "static/js/main.a9aba494.js"
+  ]
+}
