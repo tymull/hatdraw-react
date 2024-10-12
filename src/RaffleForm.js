@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import {v4 as uuid} from "uuid";
 //import axios from 'axios';
 
@@ -7,6 +7,9 @@ export default function RaffleForm() {
     const [nameArray, setNameArray] = useState([]);
     const [numPrizes, setNumPrizes] = useState("1");
     const [winnerList, setWinnerList] = useState([]);
+
+    // Use a ref to scroll to the results section
+    const resultsRef = useRef(null);
     
     const handleClick = (event) => {
         event.preventDefault();
@@ -23,6 +26,8 @@ export default function RaffleForm() {
         setNameArray(nameArrayBuilder);
         let prizesCount = numPrizes;
         raffleAllWinners(nameArrayBuilder, prizesCount);
+        // Scroll to the results after the winners are drawn
+        scrollToResults();
     }
     
     function removeEmptyStrings(arr) {
@@ -72,6 +77,13 @@ export default function RaffleForm() {
 //     console.log("array: " + nameArray);
 // }, [nameArray]);
     
+    // Scroll to the results section
+    function scrollToResults() {
+        if (resultsRef.current) {
+            resultsRef.current.scrollIntoView({ behavior: "smooth" });
+        }
+    }
+
     return (
         <>
         <div className="section main-section">
@@ -79,7 +91,7 @@ export default function RaffleForm() {
                 <form>
                     <div className="form-group">
                       <label className="label-instructions" for="raffleHatTextarea">Enter
-                        each entry (name, number, etc.) on its own line in the field below.
+                        each entry (name, number, etc.) on its own line in the field below:
                       </label>
                       <textarea className="form-control form-control-lg" id="exchangeHatTextarea" rows="7" placeholder="Name 1" value={names} onChange={e => setNames(e.target.value)}></textarea>
                       {/*Could have done something like "Name 1&#10;Name 2&#10;etc..." to show lines, but it doesn't work on safari or iphones. Would need
@@ -88,7 +100,7 @@ export default function RaffleForm() {
                     <div className="form-group">
                         <label className="label-instructions" for="exchangeHatTextarea">Enter the
                           number of prizes being raffled (if there are more prizes than entries,
-                          hat will be refilled when empty)</label>
+                          the hat will be refilled when empty):</label>
                         <input type="number" className="form-control form-control-lg" id="exchangeHatTextarea" rows="1" min="1" value={numPrizes} onChange={e => setNumPrizes(e.target.value)}/>
                     </div>
                     <div className="form-group">
@@ -99,13 +111,12 @@ export default function RaffleForm() {
             </div>
             <div className="section">
               <p className="p-description">This hat is great for raffles. You provide the list of entries and
-                select how many names are pulled. You can pull them one at a time or
-                all at once. You can also desice whether or not you want to keep the
-                drawn entries out or put them back in. You can send the results to a
-                list of emails if you provide them, or you can save your own copy.</p>
+                select how many names are pulled based on how many prizes are available. It will simulate the
+                full raffle, removing the entry after each draw.</p>
             </div>
         </div>
-        <ul className="list">
+        {/* Winners list with reference for scrolling */}
+        <ul className="list" ref={resultsRef}>
             {winnerList.map((winner, index) => {
               return <li key={winner.id}><h1>Prize {index + 1} Winner: {winner.name}</h1></li>;
             })}
@@ -113,6 +124,10 @@ export default function RaffleForm() {
         </>
     );
 }
+
+
+//Below is another implementation I was testing out for the raffle. I may use it later for more features.
+
 //"Prize " + prizeCount + " Winner:\n\n" + winner + "\n\n"
 // {cart.map(product => (
 //       <div key={product.id} className="product">
